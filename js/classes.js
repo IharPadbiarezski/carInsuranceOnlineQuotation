@@ -60,9 +60,9 @@ class Insurance {
           Complete insurance is going to increse the value by 50%
           */
     if (level === "basic") {
-      price = price * 1.3;
+      price = Math.round(price * 1.3);
     } else {
-      price = price * 1.5;
+      price = Math.round(price * 1.5);
     }
     return price;
   }
