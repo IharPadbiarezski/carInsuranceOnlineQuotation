@@ -1,11 +1,33 @@
 // Variables
+const form = document.getElementById("request-quote");
 
 // Event Listeners
-document.addEventListener("DOMContentLoaded", function() {
-  // Create the <options> for the years
-  const html = new HTMLUI();
-  html.displayYears();
-});
+eventListeners();
+function eventListeners() {
+  document.addEventListener("DOMContentLoaded", function() {
+    // Create the <options> for the years
+    const html = new HTMLUI();
+    html.displayYears();
+  });
+
+  // When the form is submitted
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Read the values fromthe form
+    const make = document.getElementById("make").value;
+    const year = document.getElementById("year").value;
+    // Read the radio buttons
+    const level = document.querySelector('input[name="level"]:checked').value;
+
+    // Check all the fields have something
+    if (make === "" || year === "" || level === "") {
+      console.log("Error");
+    } else {
+      console.log("Alright");
+    }
+  });
+}
 
 // Objects
 
